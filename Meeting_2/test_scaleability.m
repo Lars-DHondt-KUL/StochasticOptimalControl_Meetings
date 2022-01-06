@@ -9,6 +9,7 @@ addpath([pwd '\Integrator']);
 noise_factors = [2];
 dt = 0.167;
 dt_sf = [0.5,1,1.5,2];
+use_feedback = 0;
 n = length(dt_sf);
 res_name = ['compare_noise_factor_' num2str(noise_factors(1)) '_trials_' num2str(n), '_dt'];
 
@@ -30,7 +31,7 @@ res_name = ['compare_noise_factor_' num2str(noise_factors(1)) '_trials_' num2str
 %     
 %     diary([pwd '/' log_folder '/' 'example2_2_i' num2str(i) '.txt'])
 %     t0 = tic;
-%     [R1] = example2_2(0,noise_factors,dti);
+%     [R1] = example2_2(0,noise_factors,dti,use_feedback);
 %     t1 = toc(t0);
 %     Results1{i} = R1;
 %     time_1(i) = t1;
@@ -39,7 +40,7 @@ res_name = ['compare_noise_factor_' num2str(noise_factors(1)) '_trials_' num2str
 % 
 %     diary([pwd '/' log_folder '/' 'example2_2b_i' num2str(i) '.txt'])
 %     t0 = tic;
-%     [R2] = example2_2b(0,noise_factors,dti);
+%     [R2] = example2_2b(0,noise_factors,dti,use_feedback);
 %     t2 = toc(t0);
 %     Results2{i} = R2;
 %     time_2(i) = t2;
@@ -115,6 +116,9 @@ for i=1:n
         t1_tot_i = t1_tot_i + R1ij.stats.t_wall_total;
         t2_tot_i = t2_tot_i + R2ij.stats.t_wall_total;
 
+
+        t1_tot(i,j) = R1ij.stats.t_wall_total;
+        t2_tot(i,j) = R2ij.stats.t_wall_total;
 
         subplot(nv,nh,4)
         t_feval_1ij = R1ij.stats.t_wall_nlp_f + R1ij.stats.t_wall_nlp_g + ...
@@ -511,6 +515,19 @@ ylim([noise_factors(1)-0.5,noise_factors(1)+0.5])
 %     plot(t,R21j.F(1,:),'--','Color',cs2(j,:));
 %     xlim([t(1),t(end)]) 
 % end
+
+
+%%
+
+% figure(10)
+% plot(t1_tot,t2_tot./t1_tot,'.k','MarkerSize',10)
+% hold on
+% xlabel('CPU time original (s)')
+% ylabel('CPU time adapted r.t. original (-)')
+% title({'Relative duration difference'})
+% axis tight; yl = get(gca, 'ylim'); ylim([yl(1)-0.1*norm(yl),yl(2)+0.1*norm(yl)]); 
+% xl = get(gca, 'xlim'); xlim([xl(1)-0.1*norm(xl),xl(2)+0.1*norm(xl)]);
+
 
 
 

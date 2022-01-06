@@ -164,7 +164,6 @@ eq_constr = vertcat(eq_constr_N(:));
 
 f_OCP_adapted = Function('f_OCP_adapted',{x_mean,F,Pvar,K,D,},{obj,eq_constr});
 
-
 %% compare them
 clearvars -except f_OCP_original f_OCP_adapted N
 

@@ -1,4 +1,4 @@
-function [Results] = example2_2(make_fig,noise_factors,dt)
+function [Results] = example2_2(make_fig,noise_factors,dt,fb)
 
 % clear all; clc; close all;
 % make_fig = 1;
@@ -51,8 +51,10 @@ for ii = 1:length(noise_factors)
     Pvar = opti.variable(4,N+1);   % covariance matrix
     K = opti.variable(1,1);        % stiffness
     D = opti.variable(1,1);        % damping
-    opti.subject_to(K == 0);
-    opti.subject_to(D == 0);
+    if ~fb
+        opti.subject_to(K == 0);
+        opti.subject_to(D == 0);
+    end
 
     
     P_k = 0.0001*eye(2);        
