@@ -1,4 +1,4 @@
-clear all; close all; clc;
+clear all; %close all; clc;
 
 % 1D pointmass (mass = m) perturbed by a random (Gaussian) force (F)
 % dx/dt = xdot
@@ -13,7 +13,7 @@ x_sim = NaN(nr_sim,N+1); x_sim(:,1) = 0;
 xdot_sim = NaN(nr_sim,N+1); xdot_sim(:,1) = 0;
 acc_i = NaN(nr_sim,N); 
 F_var_spectral = 1; % 1 N².t
-K = -10;
+K = -20;
 D = -2*sqrt(abs(K));
 % Perturbation force drawn from a random distribution. Discretized form the
 % (continuous) spectral density.

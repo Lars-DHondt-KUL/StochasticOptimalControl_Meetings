@@ -1,0 +1,67 @@
+MX
+
+44 3.1266625e+003 8.88e-016 6.03e-012  -6.9 2.01e-008    -  1.00e+000 1.00e+000h  1
+
+Number of Iterations....: 44
+
+                                   (scaled)                 (unscaled)
+Objective...............:  3.9282974000775781e+001   3.1266625046225422e+003
+Dual infeasibility......:  6.0254023992456496e-012   4.7958180958020202e-010
+Constraint violation....:  8.8817841970012523e-016   8.8817841970012523e-016
+Complementarity.........:  0.0000000000000000e+000   0.0000000000000000e+000
+Overall NLP error.......:  4.2767740124455832e-013   4.7958180958020202e-010
+
+
+Number of objective function evaluations             = 126
+Number of objective gradient evaluations             = 45
+Number of equality constraint evaluations            = 126
+Number of inequality constraint evaluations          = 0
+Number of equality constraint Jacobian evaluations   = 45
+Number of inequality constraint Jacobian evaluations = 0
+Number of Lagrangian Hessian evaluations             = 44
+Total CPU secs in IPOPT (w/o function evaluations)   =      1.457
+Total CPU secs in NLP function evaluations           =      6.679
+
+EXIT: Optimal Solution Found.
+      solver  :   t_proc      (avg)   t_wall      (avg)    n_eval
+       nlp_f  |  21.00ms (166.67us)  21.03ms (166.87us)       126
+       nlp_g  |  29.00ms (230.16us)  29.03ms (230.42us)       126
+    nlp_grad  |   1.00ms (  1.00ms) 999.00us (999.00us)         1
+  nlp_grad_f  |  28.00ms (608.70us)  28.06ms (609.91us)        46
+  nlp_hess_l  |   6.51 s (148.02ms)   6.51 s (148.01ms)        44
+   nlp_jac_g  |  91.00ms (  1.98ms)  90.88ms (  1.98ms)        46
+       total  |   8.14 s (  8.14 s)   8.14 s (  8.14 s)         1
+
+SX
+
+44 3.1266625e+003 8.88e-016 6.03e-012  -6.9 2.01e-008    -  1.00e+000 1.00e+000h  1
+
+Number of Iterations....: 44
+
+                                   (scaled)                 (unscaled)
+Objective...............:  3.9282974000775781e+001   3.1266625046225422e+003
+Dual infeasibility......:  6.0254023992456496e-012   4.7958180958020202e-010
+Constraint violation....:  8.8817841970012523e-016   8.8817841970012523e-016
+Complementarity.........:  0.0000000000000000e+000   0.0000000000000000e+000
+Overall NLP error.......:  4.2767740124455832e-013   4.7958180958020202e-010
+
+
+Number of objective function evaluations             = 126
+Number of objective gradient evaluations             = 45
+Number of equality constraint evaluations            = 126
+Number of inequality constraint evaluations          = 0
+Number of equality constraint Jacobian evaluations   = 45
+Number of inequality constraint Jacobian evaluations = 0
+Number of Lagrangian Hessian evaluations             = 44
+Total CPU secs in IPOPT (w/o function evaluations)   =      1.212
+Total CPU secs in NLP function evaluations           =      5.855
+
+EXIT: Optimal Solution Found.
+      solver  :   t_proc      (avg)   t_wall      (avg)    n_eval
+       nlp_f  |  13.00ms (103.17us)  13.00ms (103.18us)       126
+       nlp_g  |  22.00ms (174.60us)  20.95ms (166.30us)       126
+    nlp_grad  |   1.00ms (  1.00ms)   1.00ms (  1.00ms)         1
+  nlp_grad_f  |  17.00ms (369.57us)  17.00ms (369.46us)        46
+  nlp_hess_l  |   5.73 s (130.32ms)   5.73 s (130.33ms)        44
+   nlp_jac_g  |  71.00ms (  1.54ms)  71.03ms (  1.54ms)        46
+       total  |   7.07 s (  7.07 s)   7.07 s (  7.07 s)         1
